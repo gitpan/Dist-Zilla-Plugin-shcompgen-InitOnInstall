@@ -3,7 +3,7 @@ NAME
     'shcompgen generate' when distribution is installed
 
 VERSION
-    This document describes version 0.01 of
+    This document describes version 0.02 of
     Dist::Zilla::Plugin::shcompgen::InitOnInstall (from Perl distribution
     Dist-Zilla-Plugin-shcompgen-InitOnInstall), released on 2014-12-14.
 
@@ -14,6 +14,11 @@ SYNOPSIS
 
 DESCRIPTION
     This plugin is meant only for building App::shcompgen.
+
+TODO
+    Currently runs init() and generate() unconditionally. It's better if we
+    only run init() if shell init script doesn't exist or produced by an
+    older version.
 
 SEE ALSO
     shcompgen

@@ -23,7 +23,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-shcompgen-InitOnInstall
   homepage: https://metacpan.org/release/Dist-Zilla-Plugin-shcompgen-InitOnInstall
   repository: git://github.com/perlancar/perl-Dist-Zilla-Plugin-shcompgen-InitOnInstall.git
-version: '0.01'
+version: '0.02'
 x_Dist_Zilla:
   perl:
     version: '5.018002'

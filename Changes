@@ -1,5 +1,11 @@
 Revision history for Dist-Zilla-Plugin-shcompgen-InitOnInstall
 
+0.02    2014-12-14 (PERLANCAR)
+
+	- Show output of init (although most users won't see this because
+	  they use cpanm without -v).
+
+
 0.01     2014-12-14 (PERLANCAR)
 
          - First release.

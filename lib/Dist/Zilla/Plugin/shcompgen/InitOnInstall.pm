@@ -1,7 +1,7 @@
 package Dist::Zilla::Plugin::shcompgen::InitOnInstall;
 
 our $DATE = '2014-12-14'; # DATE
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 use 5.010001;
 use strict;
@@ -44,8 +44,9 @@ SHCOMPGEN_INIT:
     $content =~ s/^(install :: pure_install doc_install)/$1 shcompgen_init/m
         or die "Can't find pattern in Makefile (1)";
 
+    # apparently we can't put $ in the Makefile
     $content .= qq|\nshcompgen_init :\n\t| .
-        q|$(PERLRUN) -E'require App::shcompgen; my %args; App::shcompgen::_set_args_defaults(\%args); App::shcompgen::init(%args); App::shcompgen::generate(%args, replace=>1)'| .
+        q|$(PERLRUN) -E'require App::shcompgen; my %args; App::shcompgen::_set_args_defaults(\%args); say App::shcompgen::init(%args)->[2]; App::shcompgen::generate(%args, replace=>1)'| .
         qq|\n\n|;
 
     open $fh, ">", "Makefile" or die "Can't write modified Makefile: $!";
@@ -74,7 +75,7 @@ Dist::Zilla::Plugin::shcompgen::InitOnInstall - Run 'shcompgen init' & 'shcompge
 
 =head1 VERSION
 
-This document describes version 0.01 of Dist::Zilla::Plugin::shcompgen::InitOnInstall (from Perl distribution Dist-Zilla-Plugin-shcompgen-InitOnInstall), released on 2014-12-14.
+This document describes version 0.02 of Dist::Zilla::Plugin::shcompgen::InitOnInstall (from Perl distribution Dist-Zilla-Plugin-shcompgen-InitOnInstall), released on 2014-12-14.
 
 =head1 SYNOPSIS
 
@@ -87,6 +88,11 @@ In your dist.ini:
 This plugin is meant only for building L<App::shcompgen>.
 
 =for Pod::Coverage setup_installer
+
+=head1 TODO
+
+Currently runs init() and generate() unconditionally. It's better if we only run
+init() if shell init script doesn't exist or produced by an older version.
 
 =head1 SEE ALSO
 
