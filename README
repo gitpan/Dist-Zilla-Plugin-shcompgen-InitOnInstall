@@ -1,0 +1,47 @@
+NAME
+    Dist::Zilla::Plugin::shcompgen::InitOnInstall - Run 'shcompgen init' &
+    'shcompgen generate' when distribution is installed
+
+VERSION
+    This document describes version 0.01 of
+    Dist::Zilla::Plugin::shcompgen::InitOnInstall (from Perl distribution
+    Dist-Zilla-Plugin-shcompgen-InitOnInstall), released on 2014-12-14.
+
+SYNOPSIS
+    In your dist.ini:
+
+     [shcompgen::InitOnInstall]
+
+DESCRIPTION
+    This plugin is meant only for building App::shcompgen.
+
+SEE ALSO
+    shcompgen
+
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Dist-Zilla-Plugin-shcompgen-InitOnInstall>
+    .
+
+SOURCE
+    Source repository is at
+    <https://github.com/perlancar/perl-Dist-Zilla-Plugin-shcompgen-InitOnIns
+    tall>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-shc
+    ompgen-InitOnInstall>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
+AUTHOR
+    perlancar <perlancar@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2014 by perlancar@cpan.org.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
